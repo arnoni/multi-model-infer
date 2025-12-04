@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "multi-model-or-infer"
+version = "0.1.0"
+description = "Run a single prompt through multiple foundation models via OpenRouter and merge the responses."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "Your Name", email = "you@example.com" }
+]
+
+dependencies = [
+  "openai>=1.52.0",
+  "python-dotenv>=1.0.1",
+  "pydantic>=2.9.0",
+  "rich>=13.9.0",
+]
+
+[project.scripts]
+multi-model-infer = "multi_model_infer.__main__:main"
+
+[tool.uv]
+# Optional but nice to be explicit
+package = "multi-model-or-infer"
